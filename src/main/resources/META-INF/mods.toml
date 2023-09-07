@@ -1,0 +1,39 @@
+modLoader="javafml"
+
+loaderVersion="[36,)"
+
+license="All rights reserved"
+
+issueTrackerURL="https://github.com/KingOfTheGamesYT/Random-Mobs-Land/issues"
+
+[[mods]]
+
+modId="random_mobs_land"
+
+version="1.0.0"
+
+displayName="Random Mobs Land"
+
+logoFile="RandomMobLandLogo.png"
+
+authors=["RedRoseWarrior1 aka DevMaster1015"]
+
+description='''
+Randomnizes all mob spawns in Minecraft
+'''
+
+# Base Forge
+[[dependencies.random_mobs_land]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Base Minecraft
+[[dependencies.random_mobs_land]]
+    modId="minecraft"
+    mandatory=true
+versionRange="[1.16.5,1.17]"
+    ordering="NONE"
+    side="BOTH"
