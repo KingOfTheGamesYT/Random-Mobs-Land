@@ -3,11 +3,8 @@ package com.devmaster.random_mob_land.world.spawns;
 import com.devmaster.random_mob_land.misc.Random_Mobs_Land;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -47,21 +44,5 @@ public class SpawnEventHandler {
                 }
             }
         }
-        if (!Config.RANDOMIZE_STRUCTURE_SPAWNS) {
-            return; // Exit early if the configuration is not set to randomize
-        }
-
-        // Check if the spawn is due to a structure or jigsaw piece
-        if (event.getSpawnReason() == SpawnReason.STRUCTURE) {
-            // Cancel the current spawn
-            event.setResult(Event.Result.DENY);
-
-            // Get a random entity from your list
-            EntityType<?> randomEntity = getRandomEntity();
-
-            // Spawn the new random entity
-            randomEntity.spawn((ServerWorld) event.getWorld(), null, null, event.getPos(), SpawnReason.STRUCTURE, false, false);
-        }
-    }
     }
 }
