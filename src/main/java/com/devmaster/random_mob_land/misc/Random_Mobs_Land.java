@@ -1,4 +1,4 @@
-package com.devmaster.random_structure_land.misc;
+package com.devmaster.random_mob_land.misc;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
