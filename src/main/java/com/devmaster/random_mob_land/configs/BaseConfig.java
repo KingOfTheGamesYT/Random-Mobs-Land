@@ -7,8 +7,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.Builder;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.config.ModConfig.Loading;
-import net.minecraftforge.fml.config.ModConfig.Reloading;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 
 @EventBusSubscriber
 public class BaseConfig {
@@ -25,11 +24,11 @@ public class BaseConfig {
     }
 
     @SubscribeEvent
-    public static void onLoad(Loading configEvent) {
+    public static void onLoad(ModConfigEvent.Loading configEvent) {
     }
 
     @SubscribeEvent
-    public static void onReload(Reloading configEvent) {
+    public static void onReload(ModConfigEvent.Reloading configEvent) {
     }
 
     static {
