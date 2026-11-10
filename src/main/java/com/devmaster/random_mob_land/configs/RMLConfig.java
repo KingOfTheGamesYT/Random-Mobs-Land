@@ -11,9 +11,15 @@ public class RMLConfig {
     }
 
     public static void COMMON(ForgeConfigSpec.Builder builder) {
-            builder.comment("How many mobs that spawn in a biome.");
-            builder.push("Mob Spawn Count");
-            MobSpawnCount = builder.defineInRange("Percentage", 5, 0, 1000);
-            builder.pop();
-        }
+        builder.comment("How many mobs that spawn in a biome.");
+        builder.push("Mob Spawn Count per category");
+        MobSpawnCount = builder.defineInRange("Count", 5, 0, 1000);
+        builder.pop();
+
+        builder.push("Mob Spawn Chances");
+        Mobmin = builder.defineInRange("Min in a group", 1, 0, 640);
+        Mobmax = builder.defineInRange("Max in a group", 2, 0, 640);
+        Mobweight = builder.defineInRange("Weight", 5, 0, 100);
+        builder.pop();
+    }
         }

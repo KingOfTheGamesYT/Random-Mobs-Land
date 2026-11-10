@@ -1,38 +1,15 @@
 package com.devmaster.random_mob_land.configs;
 
-import com.electronwill.nightconfig.core.file.CommentedFileConfig;
-import com.electronwill.nightconfig.core.io.WritingMode;
-
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.Builder;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
 
 @EventBusSubscriber
 public class BaseConfig {
-    private static final Builder COMMON_BUILDER = new Builder();
+    private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec COMMON;
-
-    public BaseConfig() {
-    }
-
-    public static void loadConfig(ForgeConfigSpec config, String path) {
-        CommentedFileConfig configData = (CommentedFileConfig)CommentedFileConfig.builder(path).sync().autosave().writingMode(WritingMode.REPLACE).build();
-        configData.load();
-        config.setConfig(configData);
-    }
-
-    @SubscribeEvent
-    public static void onLoad(ModConfigEvent.Loading configEvent) {
-    }
-
-    @SubscribeEvent
-    public static void onReload(ModConfigEvent.Reloading configEvent) {
-    }
 
     static {
         RMLConfig.COMMON(COMMON_BUILDER);
-        COMMON = COMMON_BUILDER.build();
+        COMMON= COMMON_BUILDER.build();
     }
 }

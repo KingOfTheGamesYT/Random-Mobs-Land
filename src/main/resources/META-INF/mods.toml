@@ -10,7 +10,7 @@ issueTrackerURL="https://github.com/KingOfTheGamesYT/Random-Mobs-Land/issues"
 
 modId="random_mobs_land"
 
-version="1.0.0"
+version="1.0.1"
 
 displayName="Random Mobs Land"
 
@@ -23,17 +23,16 @@ Randomnizes all mob spawns in Minecraft
 '''
 
 # Base Forge
-[[dependencies.random_mobs_land]]
-    modId="forge"
-    mandatory=true
-    versionRange="[36,)"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.random_mobs_land]] #optional
+modId="forge" #mandatory
+mandatory=true #mandatory
+versionRange="${forge_version_range}" #mandatory
+ordering="NONE"
+side="BOTH"
 
-# Base Minecraft
 [[dependencies.random_mobs_land]]
-    modId="minecraft"
-    mandatory=true
-versionRange="[1.16.5,1.17]"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
